@@ -2,16 +2,17 @@ function getData () {
     fetch("data.json")
     .then (response => response.json())
     .then (data => {
-        // console.log(data)
-        data.forEach(element => {
-            let summarySections = document.getElementsByClassName("content_summary");
-            let section = document.createElement("div").classList.add("content_summary_sections-" + `${data.category}`);
+        data.forEach( (element, index) => {
+            let imgs = document.querySelectorAll(".content_summary_sections--details img") ;
+            imgs[index].src = element.icon ; 
 
-            let sectionDetails = document.createElement("div")
+            let titles = document.querySelectorAll(".content_summary_sections--details-text") ;
+            titles[index].textContent = element.category ;
 
-            summarySections.appendChild(section)
+            let nmbrs = document.querySelectorAll(".content_summary_sections--details-numbers") ;
+            nmbrs[index].innerHTML = `${element.score} <span> / 100</span>` 
         });
-    })
+    });
 }
 
 getData ();
