@@ -185,6 +185,17 @@ h3 {
   margin: 15px 30px 0 30px;
   padding: 15px;
   border-radius: 30px;
-  border: solid 1px #4f4e4a;
+  border: none;
   font-family: "Hanken Grotesk";
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+@media only screen and (min-width: 768px) {
+  .content_button {
+    margin: 15px 0 0 0;
+  }
+}
+.content_button:hover {
+  background: rgb(93, 0, 193);
+  background: linear-gradient(0deg, rgb(93, 0, 193) 0%, rgb(158, 67, 255) 50%);
 }/*# sourceMappingURL=style.css.map */
